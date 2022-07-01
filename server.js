@@ -32,17 +32,37 @@ app.use(express.json())
 app.get('/',(request, response)=>{
     db.collection('rappers').find().sort({likes: -1}).toArray()
     .then(data => {
-        response.render('index.ejs', { info: data })
+        response.render('home.ejs', { info: data })
     })
     .catch(error => console.error(error))
 })
+
+app.get('/home.ejs', function(req, res) {
+    res.render('home');
+});
 
 app.get('/buildingOverview.ejs', function(req, res) {
     res.render('buildingOverview');
 });
 
-app.get('/index.ejs', function(req, res) {
-    res.render('index');
+app.get('/loads.ejs', function(req, res) {
+    res.render('loads');
+});
+
+app.get('/design.ejs', function(req, res) {
+    res.render('design');
+});
+
+app.get('/about.ejs', function(req, res) {
+    res.render('about');
+});
+
+app.get('/references.ejs', function(req, res) {
+    res.render('references');
+});
+
+app.get('/forum.ejs', function(req, res) {
+    res.render('forum');
 });
 
 app.post('/addRapper', (request, response) => {
