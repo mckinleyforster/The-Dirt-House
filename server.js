@@ -2,12 +2,13 @@ const express = require('express')
 const app = express()
 const MongoClient = require('mongodb').MongoClient
 const PORT = 2121
+var path = require('path')
 require('dotenv').config()
 
 
 let db,
     dbConnectionStr = process.env.DB_STRING,
-    dbName = 'rap'
+    dbName = 'Housing'
 
 MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })
     .then(client => {
@@ -15,8 +16,15 @@ MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })
         db = client.db(dbName)
     })
     
+app.use('/css', express.static('public/stylesheets'));
+app.use('/scripts', express.static('public/javascripts'));
+
+
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
+// app.use(express.static('views'))
+app.use(express.static('files'))
+app.use('/static', express.static('public'))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
@@ -28,6 +36,14 @@ app.get('/',(request, response)=>{
     })
     .catch(error => console.error(error))
 })
+
+app.get('/buildingOverview.ejs', function(req, res) {
+    res.render('buildingOverview');
+});
+
+app.get('/index.ejs', function(req, res) {
+    res.render('index');
+});
 
 app.post('/addRapper', (request, response) => {
     db.collection('rappers').insertOne({stageName: request.body.stageName,
