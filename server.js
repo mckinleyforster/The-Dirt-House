@@ -49,8 +49,12 @@ app.get('/loads.ejs', function(req, res) {
     res.render('loads');
 });
 
-app.get('/design.ejs', function(req, res) {
-    res.render('design');
+app.get('/archDesign.ejs', function(req, res) {
+    res.render('archDesign');
+});
+
+app.get('/strucDesign.ejs', function(req, res) {
+    res.render('strucDesign');
 });
 
 app.get('/about.ejs', function(req, res) {
