@@ -1,5 +1,5 @@
 {
-  "name": "theHouseMaker",
+  "name": "thehousemaker",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -16,5 +16,14 @@
     "mongodb": "^3.6.5",
     "nodemon": "^2.0.18"
   },
-  "description": ""
+  "description": "Write a short sentence or two about this project and what it does. Be sure to include a link and a screenshot (we're front end devs so we can actually see our work!).",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mckinleyforster/The-Dirt-House.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mckinleyforster/The-Dirt-House/issues"
+  },
+  "homepage": "https://github.com/mckinleyforster/The-Dirt-House#readme"
 }
