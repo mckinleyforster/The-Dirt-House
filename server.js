@@ -45,10 +45,6 @@ app.get('/buildingOverview.ejs', function(req, res) {
     res.render('buildingOverview');
 });
 
-app.get('/loads.ejs', function(req, res) {
-    res.render('loads');
-});
-
 app.get('/archDesign.ejs', function(req, res) {
     res.render('archDesign');
 });
@@ -57,8 +53,8 @@ app.get('/strucDesign.ejs', function(req, res) {
     res.render('strucDesign');
 });
 
-app.get('/about.ejs', function(req, res) {
-    res.render('about');
+app.get('/ourStory.ejs', function(req, res) {
+    res.render('ourStory');
 });
 
 app.get('/references.ejs', function(req, res) {
